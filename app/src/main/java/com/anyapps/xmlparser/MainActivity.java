@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.anyapps.xmlparser.core.XMLBaseParser;
 import com.anyapps.xmlparser.model.CanlarModel;
 import com.anyapps.xmlparser.model.parser.CanlarModelParser;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity
         if (!TextUtils.isEmpty(response)) {
             ArrayList<CanlarModel> canlarModelArrayList = null;
             try {
+                //canlarModelArrayList = new XMLBaseParser<CanlarModel>().parseXMLResponseList(response);//Later consider direct use
                 canlarModelArrayList = new CanlarModelParser().parseXMLResponseList(response);
             } catch (Exception e) {
                 e.printStackTrace();
